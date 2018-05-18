@@ -13,16 +13,15 @@ AUTH = {
         }
 
 def main:
-    <code>
 
-auth_reponse = requests.post('{0}token'.format(API_URL),
-    data=AUTH)
+    auth_reponse = requests.post('{0}token'.format(API_URL),
+        data=AUTH)
 
-bearer = { 'Authorization': auth_response.json() }
+    bearer = { 'Authorization': auth_response.json() }
 
-headers=bearer
-location_response = requests.post('{0}import/AccountLocations'.format(API_URL),
-    json=AccountLocations)
+    headers=bearer
+    location_response = requests.post('{0}import/AccountLocations'.format(API_URL),
+        json=AccountLocations)
 
 
 
