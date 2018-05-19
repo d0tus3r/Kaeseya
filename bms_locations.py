@@ -43,7 +43,7 @@ def main():
         location_header = {
             'accept': 'application/json',
             'content-type': 'application/json',
-            'authorization': token
+            'authorization': 'Bearer {0}'.format(token)
         }
        #Post Locations
         location_response = requests.post(LOCATION_URL, json=AccountLocations, headers=location_header)
