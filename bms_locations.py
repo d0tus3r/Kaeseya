@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-import requests
-import json
-import argparse
-import logging
+'''set env path'''
 import sys
+import json
+import requests
 from config import CONFIG
 
 #pull creds from ~/.bms.ini
@@ -49,8 +48,8 @@ def main():
             'authorization': 'Bearer {0}'.format(token)
         }
        #Post Locations
-        location_response = requests.post(LOCATION_URL, json=account_locations,
-            headers=location_header)
+        location_response = requests.post(LOCATION_URL, json=account_locations,\
+			 headers=location_header)
 
         print(location_response)
 
