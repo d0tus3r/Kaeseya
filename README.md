@@ -5,29 +5,52 @@ We recently started using BMS by Kaseya for our CRM. While migrating to this new
 
 
 This script pulls login credentials from an INI file located in ~/ and follows the general format of:
+
 [BMS]
+
 USERNAME = bms_username
+
 PASSWORD = bms_pass
+
 TENANT = company_name
+
 GRANT_TYPE = password
+
 API_URL = api_url
+
 LOCATION_URL = kaseya account api/import/AccountLocations
+
+
 
 You'll need to pass a json file with the account locations you wish to add:
 
 
+
 [
+
   {
+  
     "AccountName": "Account Name",
+    
     "LocationName": "Unit #",
+    
     "isMain": "false"
+    
   },
+  
   {
+  
     "AccountName": "Account Name",
+    
     "LocationName": "Unit #",
+    
     "isMain": "false"
+    
   }
+  
 ]
 
+
 Call the script (depending on env)
+
 $python3 bms_locations.py jsonfilename.json
